@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  useLoadScript,
+  Marker,
+  StandaloneSearchBox,
+} from "@react-google-maps/api";
 import "../styles/map.css";
 
 export default function Map() {
@@ -10,11 +14,16 @@ export default function Map() {
 
   if (!isLoaded) return <div> Loading...</div>;
 
+  const onLoad = (ref) => (this.searchBox = ref);
+  const onPlacesChanged = () => console.log(this.searchBox.getPlaces());
+
   return (
-    <GoogleMap
-      zoom={10}
-      center={{ lat: 29.65, lng: -82.324829 }}
-      mapContainerClassName="map-container"
-    ></GoogleMap>
+    <div>
+      <GoogleMap
+        zoom={10}
+        center={{ lat: 29.65, lng: -82.324829 }}
+        mapContainerClassName="map-container"
+      ></GoogleMap>
+    </div>
   );
 }
