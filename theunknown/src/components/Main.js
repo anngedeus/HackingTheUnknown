@@ -1,25 +1,40 @@
-import { Grid, Paper } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import React, { useState, useEffect } from "react";
-import Map from "./map.js";
+import Map from "./map";
 
 export default function Main() {
   return (
     <Grid container spacing={2}>
-      <Grid item xs={12} md={8}>
-        <Paper sx={{ backgroundColor: "grey" }}>
-          <h3>User Information in this grid with profile picture</h3>
+      <Grid item xs={12} md={4}>
+        <Paper
+          elevation={10}
+          sx={{ height: 300, marginTop: 3, marginLeft: 5, width: 310 }}
+        >
+          <AccountCircleOutlinedIcon
+            style={{ fontSize: 150, marginLeft: 70, marginTop: 50 }}
+          />
+          <div style={{ marginLeft: 110 }}>
+            <Typography>User Name</Typography>
+          </div>
+          <div style={{ marginLeft: 70, marginTop: 10 }}>
+            <Typography>User score (something)</Typography>
+          </div>
         </Paper>
       </Grid>
-      <Grid item xs={12} md={4}>
-        <Paper sx={{ backgroundColor: "yellow" }}>
+      <Grid item xs={12} md={8}>
+        <Paper
+          elevation={10}
+          sx={{ height: 300, marginTop: 3, marginRight: 5 }}
+        >
           <h3>other information here</h3>
         </Paper>
       </Grid>
       <Grid item xs={12} md={8}>
         <Paper sx={{ backgroundColor: "pink" }}>
           <h3>Map here</h3>
-          <Map />
         </Paper>
+        <Map />
       </Grid>
       <Grid item xs={12} md={4}>
         <Paper sx={{ backgroundColor: "green" }}>
