@@ -1,17 +1,16 @@
 import React from "react";
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import {Route, Routes} from "react-router-dom"
 import Main from "./components/Main"
+import Login from "./components/Login"
 
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
         <Routes>
-          <Route path='/Main' element={<Main/>} />
           <Route exact path="/" element={<Login />} />
-        </Routes>
-      </BrowserRouter>
+          <Route path='/Main' element={<Main/>} />
+        </Routes>  
     </div>
   );
 }

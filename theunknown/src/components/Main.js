@@ -1,9 +1,5 @@
 import {
-    makeStyles,
-    Typography,
     Grid,
-    Card,
-    CardMedia,
     Paper,
 } from "@mui/material"
 import React, {useState, useEffect} from 'react'
