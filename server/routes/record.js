@@ -49,9 +49,18 @@ recordRoutes.route("/update-visited").post(function (req, response) {
     .collection("Users")
     .updateOne(myquery, newvalues, function (err, res) {
       if (err) throw err;
-      console.log("1 document updated");
       response.json(res);
     });
+});
+
+//route for getting location info
+recordRoutes.route("/get-location/").post(function (req, res) {
+  let db_connect = dbo.getDb();
+  let myquery = { _id: ObjectId(req.body._id) };
+  db_connect.collection("Locations").findOne(myquery, function (err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
 });
 
 module.exports = recordRoutes;
