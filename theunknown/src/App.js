@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Container, Stage, Sprite } from "@inlet/react-pixi";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Stage width={300} height={300} options={{ backgroundColor: 0xeef1f5 }}>
+      <Container position={[150, 150]}>
+        <Sprite
+          anchor={0.5}
+          x={-75}
+          y={-75}
+          image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/693612/IaUrttj.png"
+        />
+        <Sprite
+          anchor={0.5}
+          x={0}
+          y={0}
+          image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/693612/IaUrttj.png"
+        />
+        <Sprite
+          anchor={0.5}
+          x={75}
+          y={75}
+          image="https://s3-us-west-2.amazonaws.com/s.cdpn.io/693612/IaUrttj.png"
+        />
+      </Container>
+    </Stage>
   );
 }
 
