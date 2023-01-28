@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-export default function Login() {
+export default function SignUp() {
   const [form, setForm] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -18,33 +19,49 @@ export default function Login() {
   async function onSubmit(e) {
     e.preventDefault();
 
-    const loginInfo = { ...form };
-    console.log(loginInfo);
-    const response = await fetch("http://localhost:5000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(loginInfo),
-    }).catch((error) => {
-      window.alert(error);
-      return;
-    });
-
-    const userInfo = await response.json();
-    console.log(userInfo);
-    if (userInfo != null) {
-      //navigate("/", { state: {_id: userInfo._id, name: userInfo.name, visited: userInfo.visited}} ); navigate to main page with user information
+    const signUpInfo = { ...form };
+    if (
+      signUpInfo.email == "" ||
+      signUpInfo.name == "" ||
+      signUpInfo.password == ""
+    ) {
+      window.alert("All fields must be filled out.");
     } else {
-      setForm({ email: "", password: "" });
-      window.alert("Incorrect Password");
+      const response = await fetch("http://localhost:5000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(signUpInfo),
+      }).catch((error) => {
+        window.alert(error);
+        return;
+      });
+
+      const status = await response.json();
+      console.log(status);
+      if (status != null) {
+        //navigate("/") //navigate to login
+      } else {
+        window.alert("There was an error");
+      }
     }
   }
 
   return (
     <div>
-      <h3>Log In</h3>
+      <h3>Sign Up</h3>
       <form onSubmit={onSubmit}>
+        <div classname="form-group">
+          <label htmlFor="name">Name: </label>
+          <input
+            type="text"
+            classname="form-control"
+            id="name"
+            value={form.name}
+            onChange={(e) => updateForm({ name: e.target.value })}
+          />
+        </div>
         <div classname="form-group">
           <label htmlFor="email">Email: </label>
           <input
