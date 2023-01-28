@@ -5,6 +5,7 @@ import {
 } from "@mui/material"
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import React, {useState, useEffect} from 'react'
+import Map from "./map";
 
 export default function Main() {
 
@@ -30,6 +31,7 @@ export default function Main() {
                 <Paper sx={{backgroundColor: "pink"}}>
                     <h3>Map here</h3>
                 </Paper>
+                <Map />
            </Grid>
            <Grid item xs={12} md={4}>
                 <Paper sx={{backgroundColor: "green"}}>
