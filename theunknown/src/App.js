@@ -1,7 +1,7 @@
 import React from "react";
 import {Route, Routes} from "react-router-dom"
 import Main from "./components/Main"
-import Login from "./components/Login"
+import Login from "./components/login"
 
 
 function App() {
