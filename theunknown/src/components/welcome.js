@@ -31,6 +31,7 @@ export default function () {
           Explore the Unknown
         </h1>
       </div>
+      <img id="home-page-image" src={require("../images/homepic.jpg")} />
     </div>
   );
 }
