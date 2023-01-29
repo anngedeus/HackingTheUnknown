@@ -18,3 +18,11 @@
 .signup:hover{
     cursor: pointer;
 }
+
+#home-page-image {
+    margin-left: 450px;
+    margin-top: 10px;
+    width: 1000px;
+    height: 750px
+    
+}
