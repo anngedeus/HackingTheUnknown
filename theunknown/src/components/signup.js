@@ -41,7 +41,7 @@ export default function SignUp() {
       const status = await response.json();
       console.log(status);
       if (status != null) {
-        //navigate("/") //navigate to login
+        navigate("/"); //navigate to login
       } else {
         window.alert("There was an error");
       }

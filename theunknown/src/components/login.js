@@ -17,7 +17,7 @@ export default function Login() {
 
   async function onSubmit(e) {
     e.preventDefault();
-
+    console.log("ahhh");
     const loginInfo = { ...form };
     console.log(loginInfo);
     const response = await fetch("http://localhost:5000/login", {
@@ -34,7 +34,13 @@ export default function Login() {
     const userInfo = await response.json();
     console.log(userInfo);
     if (userInfo != null) {
-      //navigate("/", { state: {_id: userInfo._id, name: userInfo.name, visited: userInfo.visited}} ); navigate to main page with user information
+      navigate("/main", {
+        state: {
+          _id: userInfo._id,
+          name: userInfo.name,
+          visited: userInfo.visited,
+        },
+      });
     } else {
       setForm({ email: "", password: "" });
       window.alert("Incorrect Password");
@@ -45,21 +51,21 @@ export default function Login() {
     <div>
       <h3>Log In</h3>
       <form onSubmit={onSubmit}>
-        <div classname="form-group">
+        <div className="form-group">
           <label htmlFor="email">Email: </label>
           <input
             type="text"
-            classname="form-control"
+            className="form-control"
             id="email"
             value={form.email}
             onChange={(e) => updateForm({ email: e.target.value })}
           />
         </div>
-        <div classname="form-group">
+        <div className="form-group">
           <label htmlFor="password">Password: </label>
           <input
             type="text"
-            classname="form-control"
+            className="form-control"
             id="password"
             value={form.password}
             onChange={(e) => updateForm({ password: e.target.value })}
