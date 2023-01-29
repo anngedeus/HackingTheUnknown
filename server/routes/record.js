@@ -54,9 +54,9 @@ recordRoutes.route("/update-visited").post(function (req, response) {
 });
 
 //route for getting location info
-recordRoutes.route("/get-location/").post(function (req, res) {
+recordRoutes.route("/get-location").post(function (req, res) {
   let db_connect = dbo.getDb();
-  let myquery = { _id: ObjectId(req.body._id) };
+  let myquery = { name: req.body.name };
   db_connect.collection("Locations").findOne(myquery, function (err, result) {
     if (err) throw err;
     res.json(result);

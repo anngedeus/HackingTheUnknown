@@ -1,0 +1,27 @@
+h1 {
+    background-color: lightblue;
+    text-align: center;
+    font-size:50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h4 {
+    padding-top: 10px;
+    margin-left: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    font-size:35px;
+}
+
+#visitButton {
+background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-left: 225px;
+  margin-top: 20px;
+}

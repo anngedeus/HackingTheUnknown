@@ -1,0 +1,26 @@
+#loc-name{
+    font-size: xx-large;
+    text-align: center;
+}
+
+#address {
+    font-style: italic;
+}
+
+#description {
+    margin-left: 70px;
+    padding-left: 10px;
+    margin-right: 70px;
+    padding-right: 1px;
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    border-width:2px;
+    border-style:solid;
+    border-color: black;
+}
+
+.locInfo {
+    text-align: center;
+}
