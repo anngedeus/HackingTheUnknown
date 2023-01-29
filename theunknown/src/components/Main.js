@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import Map from "./map";
 import LocationInfo from "./LocationInfo";
+import "../styles/main.css";
 
 export default function Main() {
   const { state } = useLocation();
@@ -53,43 +54,61 @@ export default function Main() {
   }
 
   return (
-   <Grid container spacing={2}>
-   <Grid item xs={12} md={4}>
-        <Paper elevation={10} sx={{height: 300, marginTop: 3, marginLeft: 5, width: 310}}>
-            <AccountCircleOutlinedIcon style={{fontSize: 150, marginLeft: 70, marginTop: 50}}/>
-            <div style={{marginLeft: 110}}>
-                <Typography>{name}</Typography>
-            </div>
-           <div style={{marginLeft: 70, marginTop: 10}}>
-             <Typography>Visited locations: {numVisited}</Typography>
-          </div>
+    <Grid container spacing={2}>
+      <Grid item xs={12} md={4}>
+        <Paper elevation={10} sx={{ height: 100, marginTop: 0, width: 2000 }}>
+          <h1>DISCOVERING GAINESVILLE</h1>
+        </Paper>
+        <Paper
+          elevation={10}
+          sx={{ height: 100, marginTop: 3, marginLeft: 5, width: 1825 }}
+        >
+          <AccountCircleOutlinedIcon
+            style={{ fontSize: 50, marginLeft: 20, marginTop: 20 }}
+          />
         </Paper>
       </Grid>
       <Grid item xs={12} md={8}>
         <Paper
-          elevation={10}
-          sx={{ height: 300, marginTop: 3, marginRight: 5 }}
+          elevation={0}
+          sx={{
+            height: 30,
+            marginTop: 20,
+            marginLeft: -63,
+            marginTop: 24,
+            width: 1000,
+          }}
         >
-          <h3>other information here</h3>
+          <h3>
+            Welcome {name}! You have visited {numVisited} locations!{" "}
+          </h3>
         </Paper>
       </Grid>
-      <Grid item xs={12} md={8}>
-      </Grid>
-      <Grid item xs={12} md={8}>
+      <Grid item xs={12} md={8}></Grid>
+      <Grid item xs={10} md={8}>
         <div>
-           <Map onMarkerClick={onMarkerClick}/>
+          <Map onMarkerClick={onMarkerClick} />
         </div>
-       </Grid>
+      </Grid>
       <Grid item xs={12} md={4}>
-        <Paper elevation={10} sx={{backgroundColor: "pink", width: 460, height: 460, marginLeft: -2.5, marginTop: -2}}>
-          <h3>Location Details</h3>
+        <Paper
+          elevation={10}
+          sx={{
+            backgroundColor: "white",
+            width: 628,
+            height: 550,
+            marginLeft: -6,
+            marginTop: -5,
+          }}
+        >
+          <h4>Location Details</h4>
           <LocationInfo
             name={locInfo.name}
             address={locInfo.address}
             description={locInfo.description}
           />
           {locInfo.name != "" ? (
-            <button type="button" onClick={incrementVisited}>
+            <button id="visitButton" type="button" onClick={incrementVisited}>
               I visited here!
             </button>
           ) : (
