@@ -18,9 +18,7 @@ export default function Login() {
 
   async function onSubmit(e) {
     e.preventDefault();
-    console.log("ahhh");
     const loginInfo = { ...form };
-    console.log(loginInfo);
     const response = await fetch("http://localhost:5000/login", {
       method: "POST",
       headers: {
@@ -33,7 +31,6 @@ export default function Login() {
     });
 
     const userInfo = await response.json();
-    console.log(userInfo);
     if (userInfo != null) {
       navigate("/main", {
         state: {
