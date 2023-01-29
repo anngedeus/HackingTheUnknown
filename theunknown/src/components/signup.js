@@ -50,10 +50,18 @@ export default function SignUp() {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "80vh",
+      }}
+    >
       <h3>Sign Up</h3>
       <form onSubmit={onSubmit}>
-        <div classname="form-group">
+        <div classname="form-group" style={{ marginBottom: "20px" }}>
           <TextField
             label="Name"
             variant="outlined"
@@ -62,23 +70,22 @@ export default function SignUp() {
             onChange={(e) => updateForm({ name: e.target.value })}
           />
         </div>
-        <div classname="form-group">
-          <label htmlFor="email">Email: </label>
-          <input
-            type="text"
-            classname="form-control"
+        <div classname="form-group" style={{ marginBottom: "20px" }}>
+          <TextField
+            label="Email"
+            variant="outlined"
             id="email"
             value={form.email}
             onChange={(e) => updateForm({ email: e.target.value })}
           />
         </div>
-        <div classname="form-group">
-          <label htmlFor="password">Password: </label>
-          <input
-            type="text"
-            classname="form-control"
+        <div classname="form-group" style={{ marginBottom: "20px" }}>
+          <TextField
+            label="Password"
+            variant="outlined"
             id="password"
             value={form.password}
+            type="password"
             onChange={(e) => updateForm({ password: e.target.value })}
           />
         </div>

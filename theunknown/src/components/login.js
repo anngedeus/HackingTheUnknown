@@ -46,10 +46,18 @@ export default function Login() {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "80vh",
+      }}
+    >
       <h3>Log In</h3>
       <form onSubmit={onSubmit}>
-        <div className="form-group">
+        <div className="form-group" style={{ marginBottom: "20px" }}>
           <TextField
             id="email"
             label="Email"
@@ -58,7 +66,7 @@ export default function Login() {
             onChange={(e) => updateForm({ email: e.target.value })}
           />
         </div>
-        <div className="form-group">
+        <div className="form-group" style={{ marginBottom: "20px" }}>
           <TextField
             label="Password"
             id="password"
