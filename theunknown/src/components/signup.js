@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -53,10 +54,9 @@ export default function SignUp() {
       <h3>Sign Up</h3>
       <form onSubmit={onSubmit}>
         <div classname="form-group">
-          <label htmlFor="name">Name: </label>
-          <input
-            type="text"
-            classname="form-control"
+          <TextField
+            label="Name"
+            variant="outlined"
             id="name"
             value={form.name}
             onChange={(e) => updateForm({ name: e.target.value })}
