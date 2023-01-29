@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { TextField } from "@mui/material";
 import { useNavigate } from "react-router";
 
 export default function Login() {
@@ -52,20 +53,17 @@ export default function Login() {
       <h3>Log In</h3>
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="email">Email: </label>
-          <input
-            type="text"
-            className="form-control"
+          <TextField
             id="email"
+            label="Email"
+            variant="outlined"
             value={form.email}
             onChange={(e) => updateForm({ email: e.target.value })}
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password: </label>
-          <input
-            type="text"
-            className="form-control"
+          <TextField
+            label="Password"
             id="password"
             value={form.password}
             onChange={(e) => updateForm({ password: e.target.value })}
