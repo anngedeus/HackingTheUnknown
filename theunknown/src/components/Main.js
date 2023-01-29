@@ -23,19 +23,14 @@ export default function Main() {
                 </Paper>
            </Grid>
            <Grid item xs={12} md={8}>
-                <Paper elevation={10}  sx={{height: 300, marginTop: 3, marginRight: 5}}>
-                    <h3>other information here</h3>
-                </Paper>
             </Grid>
            <Grid item xs={12} md={8}>
-                <Paper sx={{backgroundColor: "pink"}}>
-                    <h3>Map here</h3>
-                </Paper>
-                <Map />
+                <div>
+                    <Map/>
+                </div>
            </Grid>
            <Grid item xs={12} md={4}>
-                <Paper sx={{backgroundColor: "green"}}>
-                    <h3>other information here</h3>
+                <Paper elevation={10} sx={{backgroundColor: "pink", width: 460, height: 460, marginLeft: -2.5, marginTop: -2}}>
                 </Paper>
            </Grid>
         </Grid>
